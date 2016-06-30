@@ -30,9 +30,29 @@
     color: white;
 }
 
-.more_info #year{
+.grid .staring{
+    display: none
+}
+
+.grid .rating{
+    display: none;
+}
+
+.more_info .year{
     position: relative;
 }
-.grid #description{
+.grid .description{
+    display: none;
+}
+
+.grid .HD{
+    height: 30px;
+    width: 40px;
+    position: absolute;
+    top:15px;
+    left: 15px;
+}
+
+.grid .hd_hidden{
     display: none;
 }

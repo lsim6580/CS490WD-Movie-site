@@ -6,6 +6,7 @@ var data = movies["movies"];
     });
 
     $(".movie_container").html(html);
+   
 });
 
 function loadTemplate(object) {
@@ -17,6 +18,7 @@ function loadTemplate(object) {
             $.each(object, function (k, v) {
                 other2 = string.replace('{{' + k + '}}', v);
                 string = other2;
+                console.log("HEY")
             });
             return other2;
 }
