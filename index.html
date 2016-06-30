@@ -9,7 +9,7 @@
             '<div class="more_info">'+
             '<div>{{title}} </div>'+
             '<div class="year">({{year}}) </div>'+
-            '<div class="starring">starring: {{starring}}</div>'+
+            '<div class="starring"><b>Starring: </b>{{starring}}</div>'+
             '</div>'+
             '<div class="description">{{description}}</div>'+
         '<div class="rating"> {{rating}}</div>'+
@@ -24,13 +24,23 @@
     <title>Project 1</title>
 </head>
 <body>
-    <div>
+    <div class="header">
+            <div>
+                <img class="movie_logo block" src="pictures/movie.png">
+            </div>
+            <div class="title block">
+            RENT A MOVIE
+            </div>
 
-        <b><a href="movie.html">
-            A MOVIE
-            </a>
-        </b>
-        <input type="search" id="search">
+        <input class="block" type="search" id="search">
+        <button id="search_button">Search</button>
+    </div>
+    <div class="sub_menu">
+        <span>Sort By </span>
+        <select id="sortBy">
+            <option value="0">year</option>
+            <option value="1">rating</option>
+        </select>
     </div>
     <div class="grid">
         <div class="movie_container">

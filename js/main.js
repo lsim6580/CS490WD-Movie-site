@@ -1,21 +1,34 @@
 $(document).ready(function(){
 var data = movies["movies"];
-    var html = "";
-    $.each(data, function(k,v){
-        html += loadTemplate(data[k]);
-    });
+data.sort(sortByYear)
+    console.log(data);
+    var html = loadTemplate(data)
 
     $(".movie_container").html(html);
-
+    $("#sortBy").on('change',function(){
+        var value = $("#sortBy").val();
+        if(value == '0'){
+            data.sort(sortByYear);
+            $(".movie_container").html(loadTemplate(data));
+        }
+        if(value == '1'){
+            data.sort(sortByRating);
+            $(".movie_container").html(loadTemplate(data));
+        }
+    })
 });
 
-function loadTemplate(object) {
+function loadTemplate(data) {
 
+
+
+    var html = '';
+
+        $.each(data, function(x){
             var string = template;
             var other2;
-
-            //console.log(typeof string);
-            $.each(object, function (k, v) {
+            $.each(data[x], function (k, v) {
+                console.log(x);
                 if(v == true){
                     other2 = string.replace('{{' + k + '}}', 'HD')
 
@@ -29,5 +42,17 @@ function loadTemplate(object) {
                 string = other2;
 
             });
-            return other2;
+            html += other2;
+    });
+            return html;
+}
+function sortByYear(a,b){
+    if(a["year"] < b["year"]){
+        return 1;
+    }
+}
+function sortByRating(a,b){
+    if(a["rating"] < b["rating"]){
+        return 1;
+    }
 }
