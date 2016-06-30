@@ -5,11 +5,14 @@
         var template =
         '<div class="frame">'+
             '<img src="{{photo}}">'+
-            '<div> {{title}}</div>'+
-            '<div>{{year}} </div>'+
-            '<div>{{description}}</div>'+
-        '<div> {{rating}}</div>'+
-        '<div>{{HD}}</div>';
+            '<div class="more_info">'+
+            '<div>{{title}} </div>'+
+            '<div id="year">{{year}} </div>'+
+            '</div>'+
+            '<div id="description">{{description}}</div>'+
+        '<div id="rating"> {{rating}}</div>'+
+        '<div id="HD">{{HD}}</div>'+
+        '</div>';
 
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
@@ -28,8 +31,10 @@
         </b>
         <input type="search" id="search">
     </div>
-    <div class="movie_container">
+    <div class="grid">
+        <div class="movie_container">
 
+        </div>
     </div>
 </body>
 </html>

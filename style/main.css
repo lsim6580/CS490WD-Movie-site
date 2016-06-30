@@ -1,3 +1,38 @@
 .movie_container{
 
 }
+.grid{
+    position: relative;
+}
+.grid .frame{
+    height: 200px;
+    width: 200px;
+    float: left;
+    border: lightgray solid;
+    padding: 5px;
+    margin: 30px 0 0 30px;
+    position: relative;
+
+}
+
+.grid img{
+    height: 100%;
+    width: 100%;
+}
+
+.grid .more_info{
+    position: absolute;
+    height: 40px;
+    background-color: rgba(0,0,0,.4);
+    width: 199px;
+    margin-top: -45px;
+    text-align: center;
+    color: white;
+}
+
+.more_info #year{
+    position: relative;
+}
+.grid #description{
+    display: none;
+}
