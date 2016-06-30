@@ -15,7 +15,7 @@
 
 }
 
-.grid img{
+.grid .photo{
     height: 100%;
     width: 100%;
 }
@@ -30,8 +30,24 @@
     color: white;
 }
 
-.grid .staring{
-    display: none
+.grid .frame:hover .more_info{
+    height: 120px;
+    background-color: rgba(0,0,0,.6);
+    margin-top: -125px;
+}
+
+.grid .frame:hover .starring{
+    visibility: visible;
+    color: white;
+    height: 40px;
+    bottom: 0;
+}
+
+.grid .starring{
+    background-color: rgba(0,0,0,.7);
+    visibility: hidden;
+    color: transparent;
+    height: 0;
 }
 
 .grid .rating{

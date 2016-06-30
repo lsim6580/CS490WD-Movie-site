@@ -6,7 +6,7 @@ var data = movies["movies"];
     });
 
     $(".movie_container").html(html);
-   
+
 });
 
 function loadTemplate(object) {
@@ -16,9 +16,18 @@ function loadTemplate(object) {
 
             //console.log(typeof string);
             $.each(object, function (k, v) {
-                other2 = string.replace('{{' + k + '}}', v);
+                if(v == true){
+                    other2 = string.replace('{{' + k + '}}', 'HD')
+
+                }
+                else if(v == false){
+                    other2 = string.replace('{{' + k + '}}', 'hd_hidden')
+                }
+                else {
+                    other2 = string.replace('{{' + k + '}}', v);
+                }
                 string = other2;
-                console.log("HEY")
+
             });
             return other2;
 }
