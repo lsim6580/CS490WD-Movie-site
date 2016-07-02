@@ -9,11 +9,11 @@ $(document).ready(function(){
         var value = $("#sortBy").val();
         if(value == '0'){
             data.sort(sortByYear);
-            $(".movie_container").html(loadTemplate(data),false,false);
+            $(".movie_container").html(loadTemplate(data,false,false));
         }
         if(value == '1'){
             data.sort(sortByRating);
-            $(".movie_container").html(loadTemplate(data),false,false);
+            $(".movie_container").html(loadTemplate(data,false,false));
         }
     })
 
