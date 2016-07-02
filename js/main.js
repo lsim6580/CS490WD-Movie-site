@@ -15,29 +15,47 @@ data.sort(sortByYear)
             $(".movie_container").html(loadTemplate(data));
         }
     })
+
     var search =$("#search") ;
-    search.on("focus", function(){
-        $(".suggestion_box").css("display", "block");
-        onSearch(data);
+    search.on("focus", function(e){
+        $(this).on("keyup", function(r){
+            console.log("here");
+            r.stopPropagation();
+            onSearch(data);
+        });
+
+
     })
-    search.on("blur", function(){
-        $(".suggestion_box").css("display", "none");
-    })
+
+    //search.keydown('keyup',onSearch(data));
+    //search.on("blur", function(e){
+    //    e.stopPropagation();
+    //    $(".suggestion_box").css("display", "none");
+    //})
 
 });
 function onSearch(data){
     var suggestion = "";
 
-    $.each(data, function(x){
-        console.log(data[x]);
-        var value = data[x]["title"]+data[x]["year"] + "," + " Starring: " + data[x]["starring"];
-        var match = value.toLowerCase().search($("#search").val().toLowerCase().trim());
-        if(match != -1){
-            suggestion += '<div class="suggestion">' + value+ '</div>';
+    if($("#search").val()) {
+        $(".suggestion_box").show()
+        $.each(data, function (x) {
+            var value = data[x]["title"] +' '+ data[x]["year"]+' '  + data[x]["starring"];
+            var match = value.toLowerCase().search($("#search").val().toLowerCase().trim());
+            if (match != -1) {
+                suggestion += '<div class="suggestion"> <b>' + data[x]["title"] +'</b>('+ data[x]["year"]+')' + ',' + ' Starring: ' + data[x]["starring"] + '</div>';
 
-        }
-        $(".suggestion_box").html(suggestion);
-    })
+            }
+            $(".suggestion_box").html(suggestion);
+            $('.suggestion').on('click',function(){
+                $("#search").val($(this).children($("b")).html());
+                $(".suggestion_box").hide()
+            })
+        })
+    }
+    else{
+        $(".suggestion_box").hide()
+    }
 }
 function loadTemplate(data) {
     var html = '';
@@ -45,7 +63,6 @@ function loadTemplate(data) {
             var string = template;
             var other2;
             $.each(data[x], function (k, v) {
-                console.log(x);
                 if(v == true){
                     other2 = string.replace('{{' + k + '}}', 'HD')
                 }
