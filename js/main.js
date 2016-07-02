@@ -19,11 +19,7 @@ data.sort(sortByYear)
 });
 
 function loadTemplate(data) {
-
-
-
     var html = '';
-
         $.each(data, function(x){
             var string = template;
             var other2;
@@ -31,7 +27,6 @@ function loadTemplate(data) {
                 console.log(x);
                 if(v == true){
                     other2 = string.replace('{{' + k + '}}', 'HD')
-
                 }
                 else if(v == false){
                     other2 = string.replace('{{' + k + '}}', 'hd_hidden')
