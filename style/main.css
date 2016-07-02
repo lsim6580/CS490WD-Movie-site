@@ -142,6 +142,20 @@ select option{
     height: 60px;
 }
 
+.suggestion_box{
+    position: fixed;
+    z-index: 100;
+    width: 430px;
+    background-color: red;
+    margin-left: 258px;
+    margin-top: -16px;
+    display: none;
+}
+.suggestion{
+    height: 40px;
+    position: relative;
+}
+
 .grid .hd_hidden{
     display: none;
 }

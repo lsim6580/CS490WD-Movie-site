@@ -1,7 +1,6 @@
 $(document).ready(function(){
 var data = movies["movies"];
 data.sort(sortByYear)
-    console.log(data);
     var html = loadTemplate(data)
 
     $(".movie_container").html(html);
@@ -16,8 +15,30 @@ data.sort(sortByYear)
             $(".movie_container").html(loadTemplate(data));
         }
     })
-});
+    var search =$("#search") ;
+    search.on("focus", function(){
+        $(".suggestion_box").css("display", "block");
+        onSearch(data);
+    })
+    search.on("blur", function(){
+        $(".suggestion_box").css("display", "none");
+    })
 
+});
+function onSearch(data){
+    var suggestion = "";
+
+    $.each(data, function(x){
+        console.log(data[x]);
+        var value = data[x]["title"]+data[x]["year"] + "," + " Starring: " + data[x]["starring"];
+        var match = value.toLowerCase().search($("#search").val().toLowerCase().trim());
+        if(match != -1){
+            suggestion += '<div class="suggestion">' + value+ '</div>';
+
+        }
+        $(".suggestion_box").html(suggestion);
+    })
+}
 function loadTemplate(data) {
     var html = '';
         $.each(data, function(x){
