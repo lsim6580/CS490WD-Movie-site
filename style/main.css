@@ -74,6 +74,10 @@ select option{
 .grid{
     position: relative;
 }
+
+.list{
+    position: relative;
+}
 .grid .frame{
     height: 200px;
     width: 200px;
@@ -83,6 +87,23 @@ select option{
     margin: 30px 0 0 30px;
     position: relative;
 
+}
+
+.list .frame{
+    height: 300px;
+    width: 1205px;
+    float: left;
+    border: lightgray solid;
+    padding: 5px;
+    margin: 30px 0 0 30px;
+    position: relative;
+}
+
+.list .photo{
+    height: 220px;
+    width: 220px;
+    padding: 5px;
+    margin: 15px 10px 10px 10px;
 }
 
 .grid .photo{
@@ -155,8 +176,6 @@ select option{
     margin-left: 255px;
     margin-top: -16px;
     display: none;
-    max-height: 175px;
-    overflow: hidden;
     border: lightgray solid thin;
 }
 .suggestion{
@@ -174,4 +193,22 @@ select option{
 
 .grid .hd_hidden{
     display: none;
+}
+
+.icons{
+    float:right;
+    padding-top: 5px;
+}
+
+.icons img{
+    height:25px;
+    width: 25px;
+}
+
+.icons img:hover{
+    cursor:pointer;
+}
+
+img.hidden{
+    display:none;
 }
