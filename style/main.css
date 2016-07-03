@@ -155,6 +155,8 @@ select option{
     margin-left: 255px;
     margin-top: -16px;
     display: none;
+    max-height: 175px;
+    overflow: hidden;
     border: lightgray solid thin;
 }
 .suggestion{

@@ -11,6 +11,7 @@ $(document).ready(function(){
             data.sort(sortByYear);
             $(".movie_container").html(loadTemplate(data,false,false));
         }
+
         if(value == '1'){
             data.sort(sortByRating);
             $(".movie_container").html(loadTemplate(data,false,false));
@@ -20,7 +21,6 @@ $(document).ready(function(){
     var search = $("#search") ;
     search.on("focus", function(e){//add a live search feature
         $(this).on("keyup", function(r){
-            console.log("here");
             r.stopPropagation();
             onSearch(data);
         });
@@ -50,9 +50,8 @@ function onSearch(data){//load the search suggestions
 
             }
             $(".suggestion_box").html(suggestion);
-            $('.suggestion').on('click',function() {
-                $("#search").val($(this).children($("b")).html());
-                console.log(index)
+            $('.suggestion').on('click',function() {//when the movie is clicked in the suggestion box
+                $("#search").val($(this).children($("b")).html());//put the title as the search value
                 $(".suggestion_box").hide()
                 var html = loadTemplate(data, index[$(this).index()], true);
                 $(".movie_container").html(html);
@@ -71,19 +70,19 @@ function onSearch(data){//load the search suggestions
 }
 function loadTemplate(data,array, single) {// load the movies to the page
     var html = '';
-        if(!array && single ==false) {
-            $.each(data, function (x) {
+        if(!array && single ==false) {//we have 3 basic functions
+            $.each(data, function (x) {//1. this is to load all of the data
                 html += goThrough(data, x)
 
             });
         }
-        if(array && single==false){
+        if(array && single==false){//2. this is to load a certian number of data
             $.each(array, function(x){
                 console.log(x);
                 html += goThrough(data,array[x])
             })
         }
-        else if(single){
+        else if(single){// this is to load just one of the data
             html = goThrough(data, array)
         }
             return html;
