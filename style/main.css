@@ -74,6 +74,11 @@ select option{
 .grid{
     position: relative;
 }
+
+.list{
+    position: relative;
+}
+
 .grid .frame{
     height: 200px;
     width: 200px;
@@ -83,6 +88,24 @@ select option{
     margin: 30px 0 0 30px;
     position: relative;
 
+}
+
+.list .frame{
+    height: 260px;
+    width: 1205px;
+    float: left;
+    border-top: lightgray solid;
+    padding: 5px;
+    margin: 10px 35px 10px 35px;
+    position: relative;
+}
+
+.list .photo{
+    height: 220px;
+    width: 220px;
+    padding: 5px;
+    border: lightgray solid;
+    margin: 10px 5px 5px 5px;
 }
 
 .grid .photo{
@@ -100,8 +123,33 @@ select option{
     color: white;
 }
 
+.list .more_info{
+    position: absolute;
+    left: 260px;
+    top: 15px;
+    height: 70px;
+    
+}
+
 .grid .more_info .movie_title{
     text-transform: uppercase;
+}
+
+.list .more_info .movie_title{
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 18px;
+    color:black;
+    display:inline-block;
+    position: relative;
+    margin: 0 10px 10px 0;
+}
+
+.list .more_info .year{
+    position: relative;
+    color: gray;
+    font-size:15px;
+    display:inline-block;
 }
 
 .grid .frame:hover .more_info{
@@ -128,11 +176,29 @@ select option{
     display: none;
 }
 
+.list .rating{
+    position:absolute;
+    top: 75px;
+    left:260px
+}
+
 .more_info .year{
     position: relative;
 }
 .grid .description{
     display: none;
+}
+
+.list .description{
+    position:absolute;
+    top: 100px;
+    left: 260px;
+    background-color: rgb(236, 255, 255);
+    width:450px;
+    height:auto;
+    line-height: 1.5;
+    border: solid lightgray 1px;
+    padding: 5px;
 }
 
 .grid .HD{
@@ -141,6 +207,14 @@ select option{
     position: absolute;
     top:15px;
     left: 15px;
+}
+
+.list .HD{
+    height:30px;
+    width:40px;
+    top:35px;
+    left:25px;
+    position:absolute;
 }
 
 .movie_logo{
@@ -170,6 +244,24 @@ select option{
     cursor: pointer;
 }
 
-.grid .hd_hidden{
+.hd_hidden{
     display: none;
+}
+
+.icons{
+    float:right;
+    padding-top: 5px;
+}
+
+.icons img{
+    height:25px;
+    width: 25px;
+}
+
+.icons img:hover{
+    cursor:pointer;
+}
+
+img.hidden{
+    display:none;
 }
