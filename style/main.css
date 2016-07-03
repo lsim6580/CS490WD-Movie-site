@@ -229,6 +229,7 @@ select option{
     z-index: 100;
     width: 470px;
     background-color: white;
+    max-height: 175px;
     margin-left: 255px;
     margin-top: -16px;
     display: none;
