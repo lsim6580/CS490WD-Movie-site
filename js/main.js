@@ -31,6 +31,28 @@ $(document).ready(function(){
 
 
     })
+	
+	$(".icons").on('click', function(){
+        if ($('#list_icon_pressed').hasClass('hidden')){
+            $('#list_icon').addClass('hidden');
+            $('#list_icon_pressed').removeClass('hidden');
+            $('#grid_icon').removeClass('hidden');
+            $('#grid_icon_pressed').addClass('hidden');
+            
+            $('#movie_library').removeClass('grid');
+            $('#movie_library').addClass('list');
+        }
+        else{
+            $('#list_icon').removeClass('hidden');
+            $('#list_icon_pressed').addClass('hidden');
+            $('#grid_icon').addClass('hidden');
+            $('#grid_icon_pressed').removeClass('hidden');
+            
+            $('#movie_library').removeClass('list');
+            $('#movie_library').addClass('grid');
+        }
+        
+    })
 
 
 });
