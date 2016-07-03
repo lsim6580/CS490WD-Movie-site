@@ -47,7 +47,7 @@
     margin-left: 35px;
     width: 1205px;
     height: 35px;
-    border-bottom: solid lightgray;
+    /*border-bottom: solid lightgray;*/
     font-size: 18px;
 }
 
@@ -93,10 +93,10 @@ select option{
 .list .frame{
 
     height: 260px;
-    width: 1205px;
+    width: 1195px;
     float: left;
     border-top: lightgray solid;
-    padding: 5px;
+    padding: 5px 5px 5px 0;
     margin: 10px 35px 10px 35px;
     position: relative;
 }
