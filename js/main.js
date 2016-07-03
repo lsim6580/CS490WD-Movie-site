@@ -46,7 +46,8 @@ function onSearch(data){//load the search suggestions
             if (match != -1) {
                 index.push(x);
 
-                suggestion += '<div class="suggestion"> <b>' + data[x]["title"] +'</b>('+ data[x]["year"]+')' + ',' + ' Starring: ' + data[x]["starring"] + '</div>';
+                suggestion += '<div class="suggestion"> <b>' + data[x]["title"] +
+                '</b>('+ data[x]["year"]+')' + ',' + ' Starring: ' + data[x]["starring"] + '</div>'; // this is the suggestion
 
             }
             $(".suggestion_box").html(suggestion);
