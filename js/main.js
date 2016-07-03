@@ -30,7 +30,7 @@ $(document).ready(function(){
         $("html").on('click',function(){$(".suggestion_box").hide();});
 
 
-    })
+    });
 	
 	$(".icons").on('click', function(){
         if ($('#list_icon_pressed').hasClass('hidden')){
