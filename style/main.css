@@ -280,3 +280,7 @@ img.hidden{
     width:20px;
     top:10px;
 }
+
+.rating_hidden{
+    display:none;
+}

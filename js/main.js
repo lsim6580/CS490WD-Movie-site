@@ -3,6 +3,10 @@ $(document).ready(function(){
     data.sort(sortByYear)
     var html = loadTemplate(data,false,false);
     $(".movie_container").html(html);
+	$.each('.frame').children('#star', function(){
+        for(var i = 1; i <= $(this).parent.html(); i++){
+            $(this).attr('src', 'pictures/gold_star.png');
+        }});
 
 
     $("#sortBy").on('change',function(){//change the order of the movies
