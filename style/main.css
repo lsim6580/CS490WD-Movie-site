@@ -47,7 +47,7 @@
     margin-left: 35px;
     width: 1205px;
     height: 35px;
-    border-bottom: solid lightgray;
+    /*border-bottom: solid lightgray;*/
     font-size: 18px;
 }
 
@@ -91,11 +91,17 @@ select option{
 }
 
 .list .frame{
+
     height: 260px;
     width: 1195px;
     float: left;
+<<<<<<< HEAD
     border-bottom: lightgray solid;
     padding: 5px;
+=======
+    border-top: lightgray solid;
+    padding: 5px 5px 5px 0;
+>>>>>>> 4baec74fcdc45db7a73ecca91f96577c5addd17e
     margin: 10px 35px 10px 35px;
     position: relative;
 }
@@ -104,8 +110,10 @@ select option{
     height: 220px;
     width: 220px;
     padding: 5px;
+
     border: lightgray solid;
     margin: 10px 5px 5px 5px;
+
 }
 
 .grid .photo{
@@ -226,6 +234,7 @@ select option{
     z-index: 100;
     width: 470px;
     background-color: white;
+    max-height: 175px;
     margin-left: 255px;
     margin-top: -16px;
     display: none;
