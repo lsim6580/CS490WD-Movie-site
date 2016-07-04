@@ -95,13 +95,8 @@ select option{
     height: 260px;
     width: 1195px;
     float: left;
-<<<<<<< HEAD
-    border-bottom: lightgray solid;
-    padding: 5px;
-=======
     border-top: lightgray solid;
     padding: 5px 5px 5px 0;
->>>>>>> 4baec74fcdc45db7a73ecca91f96577c5addd17e
     margin: 10px 35px 10px 35px;
     position: relative;
 }

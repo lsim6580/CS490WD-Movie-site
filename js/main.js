@@ -3,11 +3,6 @@ $(document).ready(function(){
     data.sort(sortByYear)
     var html = loadTemplate(data,false,false);
     $(".movie_container").html(html);
-	$.each('.frame').children('#star', function(){
-        for(var i = 1; i <= $(this).parent.html(); i++){
-            $(this).attr('src', 'pictures/gold_star.png');
-        }});
-
 
     $("#sortBy").on('change',function(){//change the order of the movies
         var value = $("#sortBy").val();
@@ -43,8 +38,7 @@ $(document).ready(function(){
             $('#grid_icon').removeClass('hidden');
             $('#grid_icon_pressed').addClass('hidden');
             
-            $('#movie_library').removeClass('grid');
-            $('#movie_library').addClass('list');
+            $('#movie_library').removeClass('grid').addClass('list');
         }
         else{
             $('#list_icon').removeClass('hidden');
@@ -52,8 +46,7 @@ $(document).ready(function(){
             $('#grid_icon').addClass('hidden');
             $('#grid_icon_pressed').removeClass('hidden');
             
-            $('#movie_library').removeClass('list');
-            $('#movie_library').addClass('grid');
+            $('#movie_library').removeClass('list').addClass('grid');
         }
         
     })
@@ -120,6 +113,12 @@ function goThrough(data, index){
     var string = template;
     var other2;
     $.each(data[index], function (k, v) {
+        if(k == "rating"){
+            for(var x = 0; x < v; x++){
+                other2 = string.replace('regular_star', 'gold_star')
+                string = other2;
+            }
+        }
         if(v == true){
             other2 = string.replace('{{' + k + '}}', 'HD')
         }
