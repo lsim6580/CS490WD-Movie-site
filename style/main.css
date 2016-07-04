@@ -92,9 +92,9 @@ select option{
 
 .list .frame{
     height: 260px;
-    width: 1205px;
+    width: 1195px;
     float: left;
-    border-top: lightgray solid;
+    border-bottom: lightgray solid;
     padding: 5px;
     margin: 10px 35px 10px 35px;
     position: relative;
@@ -191,7 +191,7 @@ select option{
 
 .list .description{
     position:absolute;
-    top: 100px;
+    top: 110px;
     left: 260px;
     background-color: rgb(236, 255, 255);
     width:450px;
@@ -264,4 +264,10 @@ select option{
 
 img.hidden{
     display:none;
+}
+
+.list .star{
+    height:20px;
+    width:20px;
+    top:10px;
 }
